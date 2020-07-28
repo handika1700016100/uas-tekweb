@@ -1,0 +1,29 @@
+<div class="container" style="text-align: center;">
+    <h3>Data Mahasiswa</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nim</th>
+          <th scope="col">Nama</th>
+          <th scope="col">Alamat</th>
+          <th scope="col">Jenis Kelamin</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of dataMahasiswa">
+          <td>{{item.nim}}</td>
+          <td>{{item.nama}}</td>
+          <td>{{item.alamat}}</td>
+          <td>{{item.jeniskelamin}}</td>
+          <td style="display: flex">
+              <button type="button" class="btn btn-warning btn-sm" [routerLink]="[ '/edit-mahasiswa', item.nim]">Edit</button>
+              <button type="button" class="btn btn-danger btn-sm ml-1" (click)="hapusMahasiswa(item)">Hapus</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+   
+    <button type="button" class="btn btn-success" [routerLink]="[ '/tambah-mahasiswa']">Tambah Mahasiswa</button>
+    <button type="button" class="btn btn-danger" [routerLink]="[ '/login']">Logout</button>
+</div>
+
